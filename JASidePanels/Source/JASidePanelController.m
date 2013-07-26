@@ -852,6 +852,7 @@ static char ja_kvoContext;
 #pragma mark - Showing Panels
 
 - (void)_showLeftPanel:(BOOL)animated bounce:(BOOL)shouldBounce {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"_showLeftPanel" object:nil];
     self.state = JASidePanelLeftVisible;
     [self _loadLeftPanel];
     
@@ -874,6 +875,7 @@ static char ja_kvoContext;
 }
 
 - (void)_showRightPanel:(BOOL)animated bounce:(BOOL)shouldBounce {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"_showRightPanel" object:nil];
     self.state = JASidePanelRightVisible;
     [self _loadRightPanel];
     
@@ -896,6 +898,7 @@ static char ja_kvoContext;
 }
 
 - (void)_showCenterPanel:(BOOL)animated bounce:(BOOL)shouldBounce {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"_showCenterPanel" object:nil];
     self.state = JASidePanelCenterVisible;
     
     [self _adjustCenterFrame];
